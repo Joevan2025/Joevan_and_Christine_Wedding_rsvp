@@ -3,153 +3,693 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joevan &amp; Christine — Wedding Invitation</title>
+<title>Joevan & Christine — Wedding Invitation</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
   :root {
-    --rose: #B8A8D4; --rose-light: #E2D8F0; --rose-deep: #7A5FAA;
-    --ivory: #FAF8FD; --ivory-dark: #EDE8F5;
-    --sage: #8BA888; --sage-light: #C8DEC6;
-    --gold: #9B8FC0; --gold-light: #D4CCE8;
-    --charcoal: #2D2B3A; --text-muted: #6A6480; --white: #FFFFFF;
-    --pb-light: #D8E8F8; --pb-mid: #A8C5E8; --pb-dark: #6A9DC8;
-    --pp-light: #E8D5F5; --pp-mid: #C5A8E0; --pp-dark: #9B72C8;
-    --sg-light: #D5E8D5; --sg-mid: #A8C5A8; --sg-dark: #7A9E8A;
+    --rose: #B8A8D4;
+    --rose-light: #E2D8F0;
+    --rose-deep: #7A5FAA;
+    --ivory: #FAF8FD;
+    --ivory-dark: #EDE8F5;
+    --sage: #8BA888;
+    --sage-light: #C8DEC6;
+    --gold: #9B8FC0;
+    --gold-light: #D4CCE8;
+    --charcoal: #2D2B3A;
+    --text-muted: #6A6480;
+    --white: #FFFFFF;
+    --pb-light: #D8E8F8;
+    --pb-mid: #A8C5E8;
+    --pb-dark: #6A9DC8;
+    --pp-light: #E8D5F5;
+    --pp-mid: #C5A8E0;
+    --pp-dark: #9B72C8;
+    --sg-light: #D5E8D5;
+    --sg-mid: #A8C5A8;
+    --sg-dark: #7A9E8A;
   }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Lato', sans-serif; background: var(--ivory); color: var(--charcoal); overflow-x: hidden; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(250,248,253,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rose-light); padding: 0 2rem; }
-  .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .nav-logo { font-family: 'Great Vibes', cursive; font-size: 1.6rem; color: var(--rose-deep); text-decoration: none; }
-  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-  .nav-links a { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(250,248,253,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rose-light);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: var(--rose-deep);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   .nav-links a:hover { color: var(--rose-deep); }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: all 0.3s; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--charcoal);
+    transition: all 0.3s;
+  }
 
   /* HERO */
-  #hero { min-height: 100vh; background: linear-gradient(160deg, var(--ivory) 0%, var(--pp-light) 50%, var(--pb-light) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; padding: 80px 2rem 4rem; }
-  #petals-canvas { position: absolute; inset: 0; pointer-events: none; }
-  .hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sg-dark); margin-bottom: 1.2rem; }
-  .hero-names { font-family: 'Great Vibes', cursive; font-size: clamp(4rem, 10vw, 7rem); color: var(--charcoal); line-height: 1.1; margin-bottom: 0.5rem; }
-  .hero-ampersand { color: var(--rose-deep); display: block; }
-  .hero-date { font-family: 'Cormorant Garant', serif; font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 300; letter-spacing: 0.18em; color: var(--text-muted); margin-bottom: 2.5rem; }
-  .hero-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.5rem; }
-  .hero-divider-line { width: 60px; height: 1px; background: var(--rose); }
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--ivory) 0%, var(--pp-light) 50%, var(--pb-light) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 2rem 4rem;
+  }
+  #petals-canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sg-dark);
+    margin-bottom: 1.2rem;
+  }
+  .hero-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(4rem, 10vw, 7rem);
+    color: var(--charcoal);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .hero-ampersand {
+    color: var(--rose-deep);
+    display: block;
+  }
+  .hero-date {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+  }
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-divider-line {
+    width: 60px;
+    height: 1px;
+    background: var(--rose);
+  }
   .hero-divider-icon { color: var(--pp-mid); font-size: 1rem; }
-  .countdown-wrap { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+
+  /* COUNTDOWN */
+  .countdown-wrap {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
   .countdown-unit { text-align: center; }
-  .countdown-number { font-family: 'Cormorant Garant', serif; font-size: clamp(2.5rem, 6vw, 3.8rem); font-weight: 600; color: var(--rose-deep); line-height: 1; display: block; }
-  .countdown-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
-  .countdown-sep { font-family: 'Cormorant Garant', serif; font-size: 2.5rem; color: var(--pp-light); align-self: flex-start; padding-top: 0.2rem; }
+  .countdown-number {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    font-weight: 600;
+    color: var(--rose-deep);
+    line-height: 1;
+    display: block;
+  }
+  .countdown-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .countdown-sep {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.5rem;
+    color: var(--pp-light);
+    align-self: flex-start;
+    padding-top: 0.2rem;
+  }
 
   /* SECTIONS */
   section { padding: 5rem 2rem; }
   .section-inner { max-width: 1000px; margin: 0 auto; }
-  .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sg-dark); margin-bottom: 0.6rem; }
-  .section-title { font-family: 'Cormorant Garant', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; color: var(--charcoal); margin-bottom: 0.5rem; line-height: 1.2; }
-  .section-title em { font-style: italic; color: var(--rose-deep); }
-  .section-subtitle { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; max-width: 560px; margin-bottom: 3rem; }
-  .floral-divider { display: flex; align-items: center; gap: 1rem; margin-bottom: 3rem; }
-  .floral-divider::before, .floral-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, var(--pp-light)); }
-  .floral-divider::after { background: linear-gradient(to left, transparent, var(--pp-light)); }
+  .section-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sg-dark);
+    margin-bottom: 0.6rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--rose-deep);
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+  .floral-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .floral-divider::before,
+  .floral-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--pp-light));
+  }
+  .floral-divider::after {
+    background: linear-gradient(to left, transparent, var(--pp-light));
+  }
   .floral-divider span { color: var(--pp-mid); font-size: 1rem; }
+
   .alt-bg { background: linear-gradient(135deg, var(--ivory-dark) 0%, var(--ivory) 100%); }
   .rose-bg { background: linear-gradient(135deg, var(--pp-light) 0%, var(--pb-light) 100%); }
 
-  /* DETAILS */
-  .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-  .detail-card { background: var(--white); border: 1px solid var(--pp-light); border-radius: 2px; padding: 2rem; position: relative; overflow: hidden; }
-  .detail-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--rose-deep); }
+  /* EVENT DETAILS CARDS */
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .detail-card {
+    background: var(--white);
+    border: 1px solid var(--pp-light);
+    border-radius: 2px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .detail-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--rose-deep);
+  }
   .detail-card-icon { font-size: 1.6rem; margin-bottom: 1rem; }
-  .detail-card h3 { font-family: 'Cormorant Garant', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--charcoal); }
-  .detail-card p, .detail-card li { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+  .detail-card h3 {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--charcoal);
+  }
+  .detail-card p, .detail-card li {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
   .detail-card ul { list-style: none; }
   .detail-card ul li::before { content: '✦ '; color: var(--sg-dark); font-size: 0.6rem; }
 
   /* ENTOURAGE */
   .entourage-group { margin-bottom: 2.5rem; }
-  .entourage-group-title { font-family: 'Cormorant Garant', serif; font-size: 1.4rem; font-style: italic; color: var(--rose-deep); margin-bottom: 1.2rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--pp-light); }
-  .entourage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
-  .entourage-card { background: var(--white); border: 1px solid var(--ivory-dark); border-radius: 2px; padding: 1.2rem; text-align: center; }
-  .entourage-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--pp-light), var(--pb-light)); margin: 0 auto 0.7rem; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garant', serif; font-size: 1.2rem; color: var(--rose-deep); font-weight: 600; }
-  .entourage-name { font-family: 'Cormorant Garant', serif; font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.2rem; }
-  .entourage-role { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+  .entourage-group-title {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--rose-deep);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--pp-light);
+  }
+  .entourage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .entourage-card {
+    background: var(--white);
+    border: 1px solid var(--ivory-dark);
+    border-radius: 2px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+  .entourage-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pp-light), var(--pb-light));
+    margin: 0 auto 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    color: var(--rose-deep);
+    font-weight: 600;
+  }
+  .entourage-name {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.2rem;
+  }
+  .entourage-role {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
 
   /* VENUE */
-  .ceremony-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .venue-card { background: var(--charcoal); color: var(--ivory); padding: 2.5rem; border-radius: 2px; position: relative; overflow: hidden; }
-  .venue-card::after { content: ''; position: absolute; bottom: -20px; right: -20px; width: 100px; height: 100px; border-radius: 50%; background: rgba(155,114,200,0.2); }
-  .venue-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sg-mid); margin-bottom: 0.8rem; }
-  .venue-name { font-family: 'Cormorant Garant', serif; font-size: 1.6rem; font-weight: 300; margin-bottom: 0.5rem; }
-  .venue-time { font-family: 'Cormorant Garant', serif; font-size: 2.2rem; font-weight: 600; color: var(--pp-light); margin-bottom: 1rem; }
-  .venue-detail { font-size: 0.85rem; line-height: 1.7; color: rgba(250,248,253,0.75); margin-bottom: 0.4rem; }
-  .map-btn { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; padding: 0.6rem 1.2rem; background: transparent; border: 1px solid var(--pp-mid); color: var(--pp-mid); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 1px; cursor: pointer; transition: all 0.2s; }
+  .ceremony-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .venue-card {
+    background: var(--charcoal);
+    color: var(--ivory);
+    padding: 2.5rem;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .venue-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: rgba(155,114,200,0.2);
+  }
+  .venue-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sg-mid);
+    margin-bottom: 0.8rem;
+  }
+  .venue-name {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+  }
+  .venue-time {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--pp-light);
+    margin-bottom: 1rem;
+  }
+  .venue-detail {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(250,248,253,0.75);
+    margin-bottom: 0.4rem;
+  }
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: 1px solid var(--pp-mid);
+    color: var(--pp-mid);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
   .map-btn:hover { background: var(--pp-mid); color: var(--charcoal); }
-  .map-embed { width: 100%; height: 360px; border: 0; border-radius: 2px; margin-top: 2rem; filter: grayscale(20%) sepia(10%); }
 
-  /* PALETTE */
-  .palette-row { display: flex; gap: 0; border-radius: 4px; overflow: hidden; height: 120px; margin-bottom: 2rem; }
-  .palette-swatch { flex: 1; position: relative; cursor: default; transition: flex 0.3s ease; }
+  .map-embed {
+    width: 100%;
+    height: 360px;
+    border: 0;
+    border-radius: 2px;
+    margin-top: 2rem;
+    filter: grayscale(20%) sepia(10%);
+  }
+
+  /* COLOR PALETTE */
+  .palette-row {
+    display: flex;
+    gap: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 120px;
+    margin-bottom: 2rem;
+  }
+  .palette-swatch {
+    flex: 1;
+    position: relative;
+    cursor: default;
+    transition: flex 0.3s ease;
+  }
   .palette-swatch:hover { flex: 2; }
-  .swatch-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.6rem; background: rgba(0,0,0,0.4); color: white; font-size: 0.68rem; letter-spacing: 0.08em; text-align: center; opacity: 0; transition: opacity 0.2s; }
+  .swatch-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 0.6rem;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
   .palette-swatch:hover .swatch-label { opacity: 1; }
-  .palette-desc { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.2rem; }
+  .palette-desc {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
   .palette-item { display: flex; align-items: center; gap: 1rem; }
-  .palette-dot { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.6); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-  .palette-name { font-family: 'Cormorant Garant', serif; font-size: 1rem; font-weight: 600; display: block; color: var(--charcoal); }
+  .palette-dot {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.6);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .palette-name {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    display: block;
+    color: var(--charcoal);
+  }
   .palette-hex { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); }
 
   /* DRESS CODE */
-  .dresscode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-  .dresscode-card { border: 1px solid var(--ivory-dark); padding: 2rem; text-align: center; background: var(--white); border-radius: 2px; transition: transform 0.2s, box-shadow 0.2s; }
+  .dresscode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .dresscode-card {
+    border: 1px solid var(--ivory-dark);
+    padding: 2rem;
+    text-align: center;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
   .dresscode-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(155,114,200,0.1); }
   .dresscode-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-  .dresscode-card h3 { font-family: 'Cormorant Garant', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.8rem; color: var(--charcoal); }
+  .dresscode-card h3 {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--charcoal);
+  }
   .dresscode-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; }
-  .dresscode-tag { display: inline-block; margin-top: 0.8rem; padding: 0.3rem 0.8rem; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 20px; background: var(--pp-light); color: var(--rose-deep); }
+  .dresscode-tag {
+    display: inline-block;
+    margin-top: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background: var(--pp-light);
+    color: var(--rose-deep);
+  }
+
+  /* GIFT */
+  .gift-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .gift-card {
+    background: var(--white);
+    border: 1px solid var(--ivory-dark);
+    border-radius: 2px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .gift-card:hover { transform: translateY(-3px); }
+  .gift-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+  .gift-card h3 {
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--charcoal);
+  }
+  .gift-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.2rem; }
+  .gift-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.2rem;
+    background: var(--rose-deep);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 1px;
+    transition: background 0.2s;
+  }
+  .gift-link:hover { background: var(--charcoal); }
 
   /* GALLERY */
-  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
-  .gallery-item { background: linear-gradient(135deg, var(--pp-light), var(--pb-light)); border-radius: 2px; overflow: hidden; position: relative; aspect-ratio: 1; cursor: pointer; }
-  .gallery-item:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: unset; }
-  .gallery-placeholder { width: 100%; height: 100%; min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--rose-deep); gap: 0.5rem; transition: all 0.3s; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .gallery-item {
+    background: linear-gradient(135deg, var(--pp-light), var(--pb-light));
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+  .gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: unset;
+  }
+  .gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--rose-deep);
+    gap: 0.5rem;
+    transition: all 0.3s;
+  }
   .gallery-placeholder span:first-child { font-size: 2rem; }
   .gallery-placeholder span:last-child { font-size: 0.75rem; letter-spacing: 0.1em; }
   .gallery-item:hover .gallery-placeholder { background: rgba(155,114,200,0.12); }
-  .gallery-upload-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; font-style: italic; text-align: center; }
+  .gallery-upload-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+  }
 
   /* VIDEO */
-  .video-wrap { position: relative; background: var(--charcoal); border-radius: 2px; overflow: hidden; aspect-ratio: 16/9; max-width: 760px; margin: 0 auto; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-  .video-play { width: 72px; height: 72px; border-radius: 50%; background: rgba(250,248,253,0.2); border: 2px solid rgba(250,248,253,0.5); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--ivory); transition: all 0.2s; position: relative; z-index: 2; }
+  .video-wrap {
+    position: relative;
+    background: var(--charcoal);
+    border-radius: 2px;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    max-width: 760px;
+    margin: 0 auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-play {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: rgba(250,248,253,0.2);
+    border: 2px solid rgba(250,248,253,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--ivory);
+    transition: all 0.2s;
+    position: relative;
+    z-index: 2;
+  }
   .video-wrap:hover .video-play { background: var(--rose-deep); border-color: var(--rose-deep); transform: scale(1.08); }
-  .video-bg-text { position: absolute; font-family: 'Great Vibes', cursive; font-size: 5rem; color: rgba(255,255,255,0.04); white-space: nowrap; }
-  .video-label { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,248,253,0.5); }
+  .video-bg-text {
+    position: absolute;
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.04);
+    white-space: nowrap;
+  }
+  .video-label {
+    position: absolute;
+    bottom: 1.5rem; left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250,248,253,0.5);
+  }
   .video-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; font-style: italic; text-align: center; }
   .youtube-embed-wrap { display: none; max-width: 760px; margin: 1rem auto 0; aspect-ratio: 16/9; }
   .youtube-embed-wrap iframe { width: 100%; height: 100%; border: 0; border-radius: 2px; }
 
   /* HASHTAG */
-  .hashtag-center { text-align: center; padding: 3rem 2rem; background: linear-gradient(135deg, var(--charcoal) 0%, #3A3248 100%); border-radius: 2px; position: relative; overflow: hidden; }
-  .hashtag-center::before { content: '❀'; position: absolute; font-size: 10rem; color: rgba(155,114,200,0.08); top: -2rem; left: -2rem; }
+  .hashtag-center {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, var(--charcoal) 0%, #3A3248 100%);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hashtag-center::before {
+    content: '❀';
+    position: absolute;
+    font-size: 10rem;
+    color: rgba(155,114,200,0.08);
+    top: -2rem; left: -2rem;
+  }
   .hashtag-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sg-mid); margin-bottom: 1rem; }
-  .hashtag-text { font-family: 'Great Vibes', cursive; font-size: clamp(2.5rem, 7vw, 4.5rem); color: var(--ivory); margin-bottom: 1rem; display: block; }
+  .hashtag-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    color: var(--ivory);
+    margin-bottom: 1rem;
+    display: block;
+  }
   .hashtag-sub { font-size: 0.85rem; color: rgba(250,248,253,0.55); max-width: 420px; margin: 0 auto; line-height: 1.7; }
-  .hashtag-copy-btn { margin-top: 1.5rem; padding: 0.6rem 1.5rem; background: transparent; border: 1px solid var(--pp-mid); color: var(--pp-mid); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border-radius: 1px; transition: all 0.2s; }
+  .hashtag-copy-btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--pp-mid);
+    color: var(--pp-mid);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 1px;
+    transition: all 0.2s;
+  }
   .hashtag-copy-btn:hover { background: var(--pp-mid); color: var(--charcoal); }
 
-  /* VISUAL PLAYLIST */
-  .music-player { background: var(--charcoal); border-radius: 4px; padding: 2rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-  .music-cover { width: 64px; height: 64px; border-radius: 4px; background: linear-gradient(135deg, var(--pp-mid), var(--pb-mid)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+  /* MUSIC */
+  .music-player {
+    background: var(--charcoal);
+    border-radius: 4px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .music-cover {
+    width: 64px; height: 64px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, var(--pp-mid), var(--pb-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
   .music-info { flex: 1; }
   .music-title { font-family: 'Cormorant Garant', serif; font-size: 1.1rem; color: var(--ivory); margin-bottom: 0.2rem; }
   .music-artist { font-size: 0.8rem; color: rgba(250,248,253,0.5); }
   .music-controls { display: flex; align-items: center; gap: 1rem; }
-  .music-btn { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: rgba(250,248,253,0.6); transition: color 0.2s; padding: 4px; }
-  .music-btn.play-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--rose-deep); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: white; }
+  .music-btn {
+    background: none; border: none; cursor: pointer;
+    font-size: 1.2rem; color: rgba(250,248,253,0.6);
+    transition: color 0.2s; padding: 4px;
+  }
+  .music-btn.play-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--rose-deep);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: white;
+  }
   .music-btn:hover { color: var(--pp-light); }
   .music-btn.play-btn:hover { background: var(--pp-dark); color: white; }
   .music-progress { margin-top: 1rem; display: flex; align-items: center; gap: 0.8rem; }
@@ -158,7 +698,15 @@
   .music-time { font-size: 0.72rem; color: rgba(250,248,253,0.4); }
   .playlist { background: var(--white); border: 1px solid var(--ivory-dark); border-radius: 2px; overflow: hidden; }
   .playlist-title { padding: 1rem 1.5rem; background: var(--ivory-dark); font-family: 'Cormorant Garant', serif; font-size: 1rem; font-weight: 600; color: var(--charcoal); border-bottom: 1px solid var(--pp-light); }
-  .playlist-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.5rem; border-bottom: 1px solid var(--ivory-dark); cursor: pointer; transition: background 0.15s; }
+  .playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid var(--ivory-dark);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
   .playlist-item:hover { background: var(--ivory); }
   .playlist-item.active { background: var(--pp-light); }
   .playlist-num { font-size: 0.72rem; color: var(--text-muted); width: 20px; text-align: center; }
@@ -171,28 +719,94 @@
   /* FAQ */
   .faq-list { max-width: 720px; }
   .faq-item { border-bottom: 1px solid var(--ivory-dark); overflow: hidden; }
-  .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1.3rem 0; cursor: pointer; font-family: 'Cormorant Garant', serif; font-size: 1.1rem; font-weight: 600; color: var(--charcoal); gap: 1rem; user-select: none; transition: color 0.2s; }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3rem 0;
+    cursor: pointer;
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    gap: 1rem;
+    user-select: none;
+    transition: color 0.2s;
+  }
   .faq-q:hover { color: var(--rose-deep); }
   .faq-icon { font-size: 1.2rem; color: var(--pp-mid); flex-shrink: 0; transition: transform 0.3s; }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; padding-bottom: 0; }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    padding-bottom: 0;
+  }
   .faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.3rem; }
   .faq-item.open .faq-icon { transform: rotate(45deg); }
 
   /* RSVP */
   #rsvp { background: linear-gradient(135deg, var(--pp-light) 0%, var(--pb-light) 50%, var(--sg-light) 100%); }
-  .rsvp-form { background: var(--white); border-radius: 2px; padding: 3rem; box-shadow: 0 4px 32px rgba(155,114,200,0.1); max-width: 680px; margin: 0 auto; }
+  .rsvp-form {
+    background: var(--white);
+    border-radius: 2px;
+    padding: 3rem;
+    box-shadow: 0 4px 32px rgba(155,114,200,0.1);
+    max-width: 680px;
+    margin: 0 auto;
+  }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
   .form-group label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
-  .form-group input, .form-group select, .form-group textarea { padding: 0.8rem 1rem; border: 1px solid var(--ivory-dark); border-radius: 2px; font-family: 'Lato', sans-serif; font-size: 0.9rem; color: var(--charcoal); background: var(--ivory); outline: none; transition: border-color 0.2s; }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--pp-dark); background: var(--white); }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--ivory-dark);
+    border-radius: 2px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+    background: var(--ivory);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--pp-dark); background: var(--white); }
   .form-group textarea { resize: vertical; min-height: 100px; }
   .rsvp-choices { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
-  .rsvp-choice-btn { flex: 1; padding: 1rem; border: 2px solid var(--ivory-dark); border-radius: 2px; background: var(--white); cursor: pointer; text-align: center; transition: all 0.2s; font-family: 'Cormorant Garant', serif; font-size: 1rem; color: var(--text-muted); }
+  .rsvp-choice-btn {
+    flex: 1; padding: 1rem;
+    border: 2px solid var(--ivory-dark);
+    border-radius: 2px;
+    background: var(--white);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
   .rsvp-choice-btn.selected.attending { border-color: var(--sg-dark); background: var(--sg-light); color: #3A6A4A; }
   .rsvp-choice-btn.selected.not-attending { border-color: var(--pp-dark); background: var(--pp-light); color: var(--rose-deep); }
   .rsvp-choice-btn span { display: block; font-size: 1.5rem; margin-bottom: 0.3rem; }
-  .submit-btn { width: 100%; padding: 1rem; background: var(--rose-deep); color: var(--white); border: none; border-radius: 2px; font-family: 'Cormorant Garant', serif; font-size: 1.1rem; letter-spacing: 0.08em; cursor: pointer; transition: background 0.2s; margin-top: 0.8rem; }
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--rose-deep);
+    color: var(--white);
+    border: none;
+    border-radius: 2px;
+    font-family: 'Cormorant Garant', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.8rem;
+  }
   .submit-btn:hover { background: var(--charcoal); }
   .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
   .form-success { text-align: center; padding: 2rem; display: none; }
@@ -200,7 +814,13 @@
   .form-success h3 { font-family: 'Cormorant Garant', serif; font-size: 1.8rem; color: var(--charcoal); margin-bottom: 0.5rem; }
   .form-success p { color: var(--text-muted); font-size: 0.9rem; }
   .rsvp-note { font-size: 0.78rem; color: var(--text-muted); font-style: italic; margin-top: 1rem; text-align: center; line-height: 1.6; }
-  .email-reminder-section { background: var(--ivory-dark); border-radius: 2px; padding: 1.5rem; margin-top: 1.5rem; border-left: 3px solid var(--sg-dark); }
+  .email-reminder-section {
+    background: var(--ivory-dark);
+    border-radius: 2px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--sg-dark);
+  }
   .email-reminder-section h4 { font-family: 'Cormorant Garant', serif; font-size: 1rem; font-weight: 600; color: var(--charcoal); margin-bottom: 0.4rem; }
   .email-reminder-section p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
 
@@ -211,68 +831,42 @@
   .footer-text { font-size: 0.78rem; line-height: 1.8; }
 
   /* MOBILE NAV */
-  .mobile-nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--ivory); border-bottom: 1px solid var(--pp-light); padding: 1.5rem; z-index: 999; }
-  .mobile-nav.open { display: block; }
-  .mobile-nav a { display: block; padding: 0.7rem 0; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; border-bottom: 1px solid var(--ivory-dark); }
-
-  /* ══════════════════════════════════
-     FLOATING MP3 MUSIC PLAYER
-  ══════════════════════════════════ */
-  #floatingPlayer {
+  .mobile-nav {
+    display: none;
     position: fixed;
-    bottom: 1.5rem; right: 1.5rem;
-    z-index: 2000;
-    background: var(--charcoal);
-    border: 1px solid rgba(197,168,224,0.3);
-    box-shadow: 0 8px 32px rgba(45,43,58,0.4);
-    padding: 0.9rem 1.1rem;
-    display: flex; align-items: center; gap: 0.85rem;
-    min-width: 230px;
-    border-radius: 4px;
-    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), opacity 0.3s;
+    top: 60px; left: 0; right: 0;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--pp-light);
+    padding: 1.5rem;
+    z-index: 999;
   }
-  #floatingPlayer.hidden { transform: translateY(120px); opacity: 0; pointer-events: none; }
-  #fpCloseBtn {
-    position: absolute; top: -8px; right: -8px;
-    width: 20px; height: 20px; border-radius: 50%;
-    background: rgba(45,43,58,0.95); border: 1px solid rgba(197,168,224,0.3);
-    color: rgba(250,248,253,0.5); font-size: 0.6rem; cursor: pointer;
-    display: flex; align-items: center; justify-content: center; line-height: 1;
-    transition: color 0.2s;
+  .mobile-nav.open { display: block; }
+  .mobile-nav a {
+    display: block;
+    padding: 0.7rem 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ivory-dark);
   }
-  #fpCloseBtn:hover { color: var(--ivory); }
-  .fp-disc {
-    width: 38px; height: 38px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--pp-mid), var(--pb-mid));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; flex-shrink: 0;
-  }
-  #floatingPlayer.playing .fp-disc { animation: fpSpin 4s linear infinite; }
-  @keyframes fpSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  .fp-info { flex: 1; min-width: 0; }
-  .fp-title { font-family: 'Cormorant Garant', serif; font-style: italic; font-size: 0.9rem; color: var(--ivory); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px; }
-  .fp-status { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,248,253,0.4); margin-top: 0.15rem; }
-  .fp-vol-row { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.35rem; }
-  #fpMuteBtn { background: none; border: none; cursor: pointer; font-size: 0.85rem; color: rgba(250,248,253,0.5); padding: 0; line-height: 1; transition: color 0.2s; }
-  #fpMuteBtn:hover { color: var(--pp-light); }
-  #fpVolSlider { -webkit-appearance: none; appearance: none; width: 55px; height: 3px; background: rgba(255,255,255,0.15); border-radius: 2px; outline: none; cursor: pointer; }
-  #fpVolSlider::-webkit-slider-thumb { -webkit-appearance: none; width: 10px; height: 10px; border-radius: 50%; background: var(--pp-mid); cursor: pointer; }
-  #fpPlayBtn { width: 34px; height: 34px; border-radius: 50%; background: var(--rose-deep); border: none; color: var(--ivory); font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
-  #fpPlayBtn:hover { background: var(--pp-dark); }
-  #fpHint { position: fixed; bottom: 6rem; right: 1.5rem; z-index: 2001; background: var(--rose-deep); color: var(--ivory); font-size: 0.72rem; letter-spacing: 0.08em; padding: 0.45rem 1rem; border-radius: 2px; opacity: 0; transition: opacity 0.5s; pointer-events: none; white-space: nowrap; }
-  #fpHint::after { content: ''; position: absolute; bottom: -5px; right: 18px; width: 10px; height: 10px; background: var(--rose-deep); transform: rotate(45deg); }
-  #fpHint.show { opacity: 1; }
 
   @media (max-width: 768px) {
-    .nav-links { display: none; } .hamburger { display: flex; }
-    .form-row { grid-template-columns: 1fr; } .ceremony-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gallery-item:first-child { grid-column: span 2; }
-    .rsvp-form { padding: 1.5rem; } .rsvp-choices { flex-direction: column; }
-    #floatingPlayer { min-width: 200px; right: 1rem; bottom: 1rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .form-row { grid-template-columns: 1fr; }
+    .ceremony-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item:first-child { grid-column: span 2; }
+    .rsvp-form { padding: 1.5rem; }
+    .rsvp-choices { flex-direction: column; }
   }
   @media (max-width: 480px) {
-    .gallery-grid { grid-template-columns: 1fr; } .gallery-item:first-child { grid-column: span 1; }
-    .countdown-wrap { gap: 1rem; } .countdown-sep { display: none; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:first-child { grid-column: span 1; }
+    .countdown-wrap { gap: 1rem; }
+    .countdown-sep { display: none; }
   }
 </style>
 </head>
@@ -281,7 +875,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">J &amp; C</a>
+    <a href="#hero" class="nav-logo">J & C</a>
     <ul class="nav-links">
       <li><a href="#details">Details</a></li>
       <li><a href="#entourage">Entourage</a></li>
@@ -308,45 +902,17 @@
   <a href="#rsvp" onclick="closeMobileNav()">RSVP</a>
 </div>
 
-<!-- ═══════════════════════════════════════════
-     FLOATING MP3 PLAYER — bottom-right corner
-     ═══════════════════════════════════════════ -->
-<div id="floatingPlayer">
-  <button id="fpCloseBtn" onclick="dismissPlayer()" title="Hide player">&#10005;</button>
-  <div class="fp-disc">&#127925;</div>
-  <div class="fp-info">
-    <div class="fp-title" id="fpTitle">Our Song</div>
-    <div class="fp-status" id="fpStatus">Click &#9654; to play</div>
-    <div class="fp-vol-row">
-      <button id="fpMuteBtn" onclick="fpToggleMute()" title="Mute">&#128266;</button>
-      <input type="range" id="fpVolSlider" min="0" max="1" step="0.05" value="0.4" oninput="fpSetVolume(this.value)">
-    </div>
-  </div>
-  <button id="fpPlayBtn" onclick="fpTogglePlay()">&#9654;</button>
-</div>
-<div id="fpHint">&#127925; Wedding music is ready!</div>
-
-<!--
-=================================================
-  🎵 HOW TO ADD YOUR MP3:
-  1. Name your file e.g. "wedding-song.mp3"
-  2. Put it in the SAME folder as this HTML file
-  3. Change MP3_FILE in the CONFIG section below
-=================================================
--->
-<audio id="weddingAudio" loop preload="auto">
-  <source src="wedding-song.mp3" type="audio/mpeg">
-</audio>
-
 <!-- HERO -->
 <section id="hero">
   <canvas id="petals-canvas"></canvas>
   <div class="hero-eyebrow">Counting Down to Forever! - Get ready to celebrate</div>
-  <div class="hero-names">Joevan<span class="hero-ampersand">&amp;</span>Christine</div>
+  <div class="hero-names">
+    Joevan<span class="hero-ampersand">&</span>Christine
+  </div>
   <div class="hero-date">Saturday, the Twenty-first of November, Two Thousand and Twenty-Six</div>
   <div class="hero-divider">
     <span class="hero-divider-line"></span>
-    <span class="hero-divider-icon">&#10022;</span>
+    <span class="hero-divider-icon">✦</span>
     <span class="hero-divider-line"></span>
   </div>
   <div class="countdown-wrap" id="countdown">
@@ -363,17 +929,76 @@
 <!-- EVENT DETAILS -->
 <section id="details" class="alt-bg">
   <div class="section-inner">
-    <div class="section-eyebrow">The Wedding of Joevan &amp; Christine</div>
+    <div class="section-eyebrow">The Wedding of Joevan & Christine</div>
     <h2 class="section-title">Full <em>Event Details</em></h2>
     <p class="section-subtitle">Everything you need to know to celebrate with us on our special day.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="details-grid">
-      <div class="detail-card"><div class="detail-card-icon">&#128141;</div><h3>The Couple</h3><ul><li>Christine Mae A. Simene, daughter of Mr. Hector Simene &amp; Mrs. Ma. Cynthia Alvarez</li><li>Joevan Ponce, son of Mr. Jose Tagolimot &amp; Mrs. Evalyn Ponce</li><li>Together since December 19, 2018</li><li>Engaged December 14, 2025</li></ul></div>
-      <div class="detail-card"><div class="detail-card-icon">&#128197;</div><h3>Wedding Day</h3><ul><li>Saturday, November 21, 2026</li><li>Ceremony begins at 2:00 PM</li><li>Reception follows at 6:00 PM</li><li>After Party at 10:00 PM</li></ul></div>
-      <div class="detail-card"><div class="detail-card-icon">&#127800;</div><h3>Theme &amp; Vibe</h3><ul><li>Romantic Garden Elegance</li><li>Pastel purple, blue &amp; sage green</li><li>Candlelit &amp; floral-forward</li><li>Formal / Cocktail attire</li></ul></div>
-      <div class="detail-card"><div class="detail-card-icon">&#127881;</div><h3>Programme</h3><ul><li>1:30 PM — Guest arrival &amp; seating</li><li>2:00 PM — Wedding ceremony</li><li>3:30 PM — Photo op &amp; cocktails</li><li>6:00 PM — Reception dinner begins</li><li>7:30 PM — First dance &amp; toasts</li><li>10:00 PM — Dancing &amp; celebration at Rombuhan Restobar</li></ul></div>
-      <div class="detail-card"><div class="detail-card-icon">&#128222;</div><h3>Contact</h3><ul><li>Joevan: +63 951 751 7046</li><li>j.cponce.me92@gmail.com</li><li>Christine: +63 943 087 7271</li><li>christinemaesimene@gmail.com</li><li>RSVP Deadline: October 15, 2026</li></ul></div>
-      <div class="detail-card"><div class="detail-card-icon">&#128664;</div><h3>Getting There</h3><ul><li>Free parking at venue grounds</li><li>Valet available at reception</li><li>Shuttles from Bacolod City Hall at 2 PM &amp; 5 PM</li><li>Contact coordinator for ride assistance</li></ul></div>
+      <div class="detail-card">
+        <div class="detail-card-icon">💍</div>
+        <h3>The Couple</h3>
+        <ul>
+          <li>Christine Mae A. Simene, daughter of Mr. Hector Simene & Mrs. Ma. Cynthia Alvarez</li>
+          <li>Joevan Ponce, son of Mr. Jose Tagolimot & Mrs. Evalyn Ponce</li>
+          <li>Together since December 19, 2018</li>
+          <li>Engaged December 14, 2025</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon">📅</div>
+        <h3>Wedding Day</h3>
+        <ul>
+          <li>Saturday, November 21, 2026</li>
+          <li>Ceremony begins at 2:00 PM</li>
+          <li>Reception follows at 6:00 PM</li>
+          <li>After Party at 10:00 PM</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon">🌸</div>
+        <h3>Theme & Vibe</h3>
+        <ul>
+          <li>Romantic Garden Elegance</li>
+          <li>Pastel purple, blue & sage green</li>
+          <li>Candlelit & floral-forward</li>
+          <li>Formal / Cocktail attire</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon">🎉</div>
+        <h3>Programme</h3>
+        <ul>
+          <li>1:30 PM — Guest arrival & seating</li>
+          <li>2:00 PM — Wedding ceremony</li>
+          <li>3:30 PM — Photo op & cocktails</li>
+          <li>6:00 PM — Reception dinner begins</li>
+          <li>7:30 PM — First dance & toasts</li>
+          <li>10:00 PM — Dancing & celebration at Rombuhan Restobar</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon">📞</div>
+        <h3>Contact</h3>
+        <ul>
+          <li>Joevan</li>
+          <li>📱 +63 951 751 7046</li>
+          <li>📧 j.cponce.me92@gmail.com</li>
+          <li>Christine</li>
+          <li>📱 +63 943 087 7271</li>
+          <li>📧 christinemaesimene@gmail.com</li>
+          <li>RSVP Deadline: October 15, 2026</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon">🚗</div>
+        <h3>Getting There</h3>
+        <ul>
+          <li>Free parking at venue grounds</li>
+          <li>Valet available at reception</li>
+          <li>Shuttles from Bacolod City Hall at 2 PM & 5 PM</li>
+          <li>Contact coordinator for ride assistance</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -384,14 +1009,68 @@
     <div class="section-eyebrow">The Wedding Party</div>
     <h2 class="section-title">Our <em>Entourage</em></h2>
     <p class="section-subtitle">The beloved people who walk beside us on this journey.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
-    <div class="entourage-group"><div class="entourage-group-title">Parents of the Groom</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">ER</div><div class="entourage-name">Erik Rikkerink</div><div class="entourage-role">Parent</div></div><div class="entourage-card"><div class="entourage-avatar">GV</div><div class="entourage-name">Grace Rikkerink</div><div class="entourage-role">Parent</div></div></div></div>
-    <div class="entourage-group"><div class="entourage-group-title">Parents of the Bride</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">HS</div><div class="entourage-name">Hector Simene</div><div class="entourage-role">Parent</div></div><div class="entourage-card"><div class="entourage-avatar">MS</div><div class="entourage-name">Ma. Cynthia Simene</div><div class="entourage-role">Parent</div></div></div></div>
-    <div class="entourage-group"><div class="entourage-group-title">Principal Sponsors</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">JR</div><div class="entourage-name">Jose &amp; Rosa Reyes</div><div class="entourage-role">Principal Sponsors</div></div><div class="entourage-card"><div class="entourage-avatar">CS</div><div class="entourage-name">Carlos &amp; Sandra Santos</div><div class="entourage-role">Principal Sponsors</div></div><div class="entourage-card"><div class="entourage-avatar">MA</div><div class="entourage-name">Miguel &amp; Ana Cruz</div><div class="entourage-role">Principal Sponsors</div></div><div class="entourage-card"><div class="entourage-avatar">PL</div><div class="entourage-name">Pedro &amp; Luisa Gomez</div><div class="entourage-role">Principal Sponsors</div></div></div></div>
-    <div class="entourage-group"><div class="entourage-group-title">Maid of Honor &amp; Best Man</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">CS</div><div class="entourage-name">Chelsea Anne Simene</div><div class="entourage-role">Maid of Honor</div></div><div class="entourage-card"><div class="entourage-avatar">BT</div><div class="entourage-name">Ben Rey Tagolimot</div><div class="entourage-role">Best Man</div></div></div></div>
-    <div class="entourage-group"><div class="entourage-group-title">Bridesmaids &amp; Groomsmen</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">CL</div><div class="entourage-name">Camille Lopez</div><div class="entourage-role">Bridesmaid</div></div><div class="entourage-card"><div class="entourage-avatar">DD</div><div class="entourage-name">Daniela Diaz</div><div class="entourage-role">Bridesmaid</div></div><div class="entourage-card"><div class="entourage-avatar">RT</div><div class="entourage-name">Rina Tan</div><div class="entourage-role">Bridesmaid</div></div><div class="entourage-card"><div class="entourage-avatar">NB</div><div class="entourage-name">Nesty Bibar</div><div class="entourage-role">Groomsman</div></div><div class="entourage-card"><div class="entourage-avatar">MM</div><div class="entourage-name">Mark Ashlee Mori</div><div class="entourage-role">Groomsman</div></div><div class="entourage-card"><div class="entourage-avatar">RG</div><div class="entourage-name">Reymar Gonzales</div><div class="entourage-role">Groomsman</div></div><div class="entourage-card"><div class="entourage-avatar">DG</div><div class="entourage-name">Dorman Joseph Gerona</div><div class="entourage-role">Groomsman</div></div></div></div>
-    <div class="entourage-group"><div class="entourage-group-title">Secondary Sponsors</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">VM</div><div class="entourage-name">Veil — Mr. &amp; Mrs. Morales</div><div class="entourage-role">Secondary Sponsor</div></div><div class="entourage-card"><div class="entourage-avatar">CR</div><div class="entourage-name">Cord — Mr. &amp; Mrs. Ramos</div><div class="entourage-role">Secondary Sponsor</div></div><div class="entourage-card"><div class="entourage-avatar">CA</div><div class="entourage-name">Candle — Mr. &amp; Mrs. Abad</div><div class="entourage-role">Secondary Sponsor</div></div><div class="entourage-card"><div class="entourage-avatar">CO</div><div class="entourage-name">Coins — Mr. &amp; Mrs. Ocampo</div><div class="entourage-role">Secondary Sponsor</div></div></div></div>
-    <div class="entourage-group"><div class="entourage-group-title">Flower Girls &amp; Ring Bearers</div><div class="entourage-grid"><div class="entourage-card"><div class="entourage-avatar">&#127800;</div><div class="entourage-name">Lily Santos</div><div class="entourage-role">Flower Girl</div></div><div class="entourage-card"><div class="entourage-avatar">&#127800;</div><div class="entourage-name">Grace Reyes</div><div class="entourage-role">Flower Girl</div></div><div class="entourage-card"><div class="entourage-avatar">&#128141;</div><div class="entourage-name">Lucas Cruz</div><div class="entourage-role">Ring Bearer</div></div></div></div>
+    <div class="floral-divider"><span>❀</span></div>
+
+    <div class="entourage-group">
+      <div class="entourage-group-title">Parents of the Groom</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">ER</div><div class="entourage-name">Erik Rikkerink</div><div class="entourage-role">Parent</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">GV</div><div class="entourage-name">Grace Rikkerink</div><div class="entourage-role">Parent</div></div>
+      </div>
+    <div class="entourage-group">
+      <div class="entourage-group-title">Parents of the Bride</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">HS</div><div class="entourage-name">Hector Simene</div><div class="entourage-role">Parent</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">MS</div><div class="entourage-name">Ma. Cynthia Simene</div><div class="entourage-role">Parent</div></div>
+      </div>
+    <div class="entourage-group">
+      <div class="entourage-group-title">Principal Sponsors</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">JR</div><div class="entourage-name">Jose & Rosa Reyes</div><div class="entourage-role">Principal Sponsors</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">CS</div><div class="entourage-name">Carlos & Sandra Santos</div><div class="entourage-role">Principal Sponsors</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">MA</div><div class="entourage-name">Miguel & Ana Cruz</div><div class="entourage-role">Principal Sponsors</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">PL</div><div class="entourage-name">Pedro & Luisa Gomez</div><div class="entourage-role">Principal Sponsors</div></div>
+      </div>
+
+    <div class="entourage-group">
+      <div class="entourage-group-title">Maid of Honor & Best Man</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">CS</div><div class="entourage-name">Chelsea Anne Simene</div><div class="entourage-role">Maid of Honor</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">BT</div><div class="entourage-name">Ben Rey Tagolimot</div><div class="entourage-role">Best Man</div></div>
+      </div>
+    </div>
+
+    <div class="entourage-group">
+      <div class="entourage-group-title">Bridesmaids & Groomsmen</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">CL</div><div class="entourage-name">Camille Lopez</div><div class="entourage-role">Bridesmaid</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">DD</div><div class="entourage-name">Daniela Diaz</div><div class="entourage-role">Bridesmaid</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">RT</div><div class="entourage-name">Rina Tan</div><div class="entourage-role">Bridesmaid</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">NB</div><div class="entourage-name">Nesty Bibar</div><div class="entourage-role">Groomsman</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">MM</div><div class="entourage-name">Mark Ashlee Mori</div><div class="entourage-role">Groomsman</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">RG</div><div class="entourage-name">Reymar Gonzales</div><div class="entourage-role">Groomsman</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">DG</div><div class="entourage-name">Dorman Joseph Gerona</div><div class="entourage-role">Groomsman</div></div>
+      </div>
+    </div>
+
+    <div class="entourage-group">
+      <div class="entourage-group-title">Secondary Sponsors</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">VM</div><div class="entourage-name">Veil — Mr. & Mrs. Morales</div><div class="entourage-role">Secondary Sponsor</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">CR</div><div class="entourage-name">Cord — Mr. & Mrs. Ramos</div><div class="entourage-role">Secondary Sponsor</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">CA</div><div class="entourage-name">Candle — Mr. & Mrs. Abad</div><div class="entourage-role">Secondary Sponsor</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">CO</div><div class="entourage-name">Coins — Mr. & Mrs. Ocampo</div><div class="entourage-role">Secondary Sponsor</div></div>
+      </div>
+    </div>
+
+    <div class="entourage-group">
+      <div class="entourage-group-title">Flower Girls & Ring Bearers</div>
+      <div class="entourage-grid">
+        <div class="entourage-card"><div class="entourage-avatar">🌸</div><div class="entourage-name">Lily Santos</div><div class="entourage-role">Flower Girl</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">🌸</div><div class="entourage-name">Grace Reyes</div><div class="entourage-role">Flower Girl</div></div>
+        <div class="entourage-card"><div class="entourage-avatar">💍</div><div class="entourage-name">Lucas Cruz</div><div class="entourage-role">Ring Bearer</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -399,15 +1078,46 @@
 <section id="venue" class="alt-bg">
   <div class="section-inner">
     <div class="section-eyebrow">Where to Be</div>
-    <h2 class="section-title">Ceremony &amp; <em>Reception</em></h2>
+    <h2 class="section-title">Ceremony & <em>Reception</em></h2>
     <p class="section-subtitle">Two beautiful venues, one unforgettable day.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="ceremony-grid">
-      <div class="venue-card"><div class="venue-tag">&#9961; Holy Wedding Ceremony</div><div class="venue-name">Queen of Peace Parish Redemptorist Church</div><div class="venue-time">2:00 PM</div><p class="venue-detail">&#128205; BS Aquino Dr, Bacolod City, Negros Occidental</p><p class="venue-detail">&#128146; A century-old church adorned with stained glass and timeless grace</p><p class="venue-detail">&#8987; Ceremony lasts approximately 1 hour</p><p class="venue-detail">&#128683; Please silence mobile phones inside the church</p><a class="map-btn" href="https://maps.google.com/maps/place/Redemptorist+Parking+Lot/@10.6806307,122.9567142,17.2z" target="_blank">&#128506; View on Google Maps</a></div>
-      <div class="venue-card"><div class="venue-tag">&#129346; Reception &amp; Celebration</div><div class="venue-name">Nature's Village Resort (Alfredo Hall)</div><div class="venue-time">6:00 PM</div><p class="venue-detail">&#128205; Talisay City</p><p class="venue-detail">&#127807; Closed function hall</p><p class="venue-detail">&#127869; A plated dinner for 100 guests</p><p class="venue-detail">&#128336; Free parking for 150 vehicles on-site</p><a class="map-btn" href="https://maps.google.com/maps/place/Nature's+Village+Resort/@10.726085,122.9615157,17z" target="_blank">&#128506; View on Google Maps</a></div>
-      <div class="venue-card"><div class="venue-tag">&#127881; After Party</div><div class="venue-name">Rombuhan Restobar</div><div class="venue-time">10:00 PM</div><p class="venue-detail">&#128205; Silay City</p><a class="map-btn" href="https://maps.google.com/maps/place/ROMBOHAN+Restobar/@10.788289,122.9683669,17z" target="_blank">&#128506; View on Google Maps</a></div>
+      <div class="venue-card">
+        <div class="venue-tag">⛪ Holy Wedding Ceremony</div>
+        <div class="venue-name">Queen of Peace Parish Redemptorist Church</div>
+        <div class="venue-time">2:00 PM</div>
+        <p class="venue-detail">📍 BS Aquino Dr, Bacolod City, Negros Occidental</p>
+        <p class="venue-detail">💒 A century-old church adorned with stained glass and timeless grace</p>
+        <p class="venue-detail">⏱ Ceremony lasts approximately 1 hour</p>
+        <p class="venue-detail">🚫 Please silence mobile phones inside the church</p>
+        <a class="map-btn" href="https://maps.google.com/maps/place/Redemptorist+Parking+Lot/@10.6806307,122.9567142,17.2z/data=!4m6!3m5!1s0x33aed10051c9b70b:0xb2f481be3bb459aa!8m2!3d10.6806389!4d122.9591336!16s%2Fg%2F11v_2sgfhg?hl=en&entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank">🗺 View on Google Maps</a>
+      </div>
+      <div class="venue-card">
+        <div class="venue-tag">🥂 Reception & Celebration</div>
+        <div class="venue-name">Nature's Village Resort (Alfredo Hall)</div>
+        <div class="venue-time">6:00 PM</div>
+        <p class="venue-detail">📍 Talisay City</p>
+        <p class="venue-detail">🌿 Closed function hall</p>
+        <p class="venue-detail">🍽 A plated dinner for 100 guests</p>
+        <p class="venue-detail">🅿 Free parking for 150 vehicles available on-site</p>
+        <a class="map-btn" href="https://maps.google.com/maps/place/Nature's+Village+Resort/@10.726085,122.9615157,17z/data=!3m1!4b1!4m9!3m8!1s0x33aed6c84a5dd153:0x177631c61f787610!5m2!4m1!1i2!8m2!3d10.726085!4d122.964096!16s%2Fg%2F1tzzs0sz?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">🗺 View on Google Maps</a>
+      </div>
+      <div class="venue-card">
+        <div class="venue-tag">🎉 After Party</div>
+        <div class="venue-name">Rombuhan Restobar</div>
+        <div class="venue-time">10:00 PM</div>
+        <p class="venue-detail">📍 Silay City</p>
+        <a class="map-btn" href="https://maps.google.com/maps/place/ROMBOHAN+Restobar/@10.788289,122.9683669,17z/data=!3m1!4b1!4m6!3m5!1s0x33aed6199bb083c7:0xa8769563f0d7ae60!8m2!3d10.788289!4d122.9709472!16s%2Fg%2F11clwjj9t0?entry=ttu&g_ep=EgoyMDI2MDYyMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">🗺 View on Google Maps</a>
+      </div>
     </div>
-    <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63134.40!2d122.9487!3d10.6840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aed0f14f0c63d9%3A0x5f8a84f5e4d7a31c!2sBacolod+City%2C+Negros+Occidental!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Wedding Venue Map"></iframe>
+    <iframe
+      class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63134.40!2d122.9487!3d10.6840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33aed0f14f0c63d9%3A0x5f8a84f5e4d7a31c!2sBacolod+City%2C+Negros+Occidental!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Wedding Venue Map">
+    </iframe>
   </div>
 </section>
 
@@ -417,16 +1127,16 @@
     <div class="section-eyebrow">Visual Identity</div>
     <h2 class="section-title">Color <em>Palette</em></h2>
     <p class="section-subtitle">Our wedding colors — soft pastels that evoke romance, serenity, and natural elegance.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="palette-row">
-      <div class="palette-swatch" style="background:#E8D5F5;"><div class="swatch-label">Pastel Purple Light</div></div>
-      <div class="palette-swatch" style="background:#C5A8E0;"><div class="swatch-label">Pastel Purple</div></div>
-      <div class="palette-swatch" style="background:#9B72C8;"><div class="swatch-label">Pastel Purple Deep</div></div>
-      <div class="palette-swatch" style="background:#D8E8F8;"><div class="swatch-label">Pastel Blue Light</div></div>
-      <div class="palette-swatch" style="background:#A8C5E8;"><div class="swatch-label">Pastel Blue</div></div>
-      <div class="palette-swatch" style="background:#D5E8D5;"><div class="swatch-label">Sage Green Light</div></div>
-      <div class="palette-swatch" style="background:#A8C5A8;"><div class="swatch-label">Sage Green</div></div>
-      <div class="palette-swatch" style="background:#7A9E8A;"><div class="swatch-label">Sage Green Deep</div></div>
+      <div class="palette-swatch" style="background:#E8D5F5;"><div class="swatch-label">Pastel Purple Light #E8D5F5</div></div>
+      <div class="palette-swatch" style="background:#C5A8E0;"><div class="swatch-label">Pastel Purple #C5A8E0</div></div>
+      <div class="palette-swatch" style="background:#9B72C8;"><div class="swatch-label">Pastel Purple Deep #9B72C8</div></div>
+      <div class="palette-swatch" style="background:#D8E8F8;"><div class="swatch-label">Pastel Blue Light #D8E8F8</div></div>
+      <div class="palette-swatch" style="background:#A8C5E8;"><div class="swatch-label">Pastel Blue #A8C5E8</div></div>
+      <div class="palette-swatch" style="background:#D5E8D5;"><div class="swatch-label">Sage Green Light #D5E8D5</div></div>
+      <div class="palette-swatch" style="background:#A8C5A8;"><div class="swatch-label">Sage Green #A8C5A8</div></div>
+      <div class="palette-swatch" style="background:#7A9E8A;"><div class="swatch-label">Sage Green Deep #7A9E8A</div></div>
     </div>
     <div class="palette-desc">
       <div class="palette-item"><div class="palette-dot" style="background:#9B72C8;"></div><div><span class="palette-name">Pastel Purple</span><span class="palette-hex">#9B72C8 — Primary</span></div></div>
@@ -444,12 +1154,32 @@
     <div class="section-eyebrow">What to Wear</div>
     <h2 class="section-title">Dress <em>Code</em></h2>
     <p class="section-subtitle">We invite our guests to dress in line with our garden romance theme. Semi-formal / Cocktail attire.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="dresscode-grid">
-      <div class="dresscode-card"><div class="dresscode-icon">&#128247;</div><h3>For Women</h3><p>Midi or maxi dresses, cocktail dresses, or elegant separates. Flats or heels welcome.</p><span class="dresscode-tag">Semi-Formal</span></div>
-      <div class="dresscode-card"><div class="dresscode-icon">&#128084;</div><h3>For Men</h3><p>Barong Tagalog (encouraged!) or coat &amp; tie. Tailored slacks and formal shoes.</p><span class="dresscode-tag">Semi-Formal</span></div>
-      <div class="dresscode-card"><div class="dresscode-icon">&#127912;</div><h3>Colour Guide</h3><p>Pastel purple, baby blue, sage green, lavender, and soft neutrals are warmly welcomed.</p><span class="dresscode-tag">Palette Colors</span></div>
-      <div class="dresscode-card"><div class="dresscode-icon">&#128683;</div><h3>Please Avoid</h3><p>White, cream, or ivory (reserved for the bride). Overly casual attire such as jeans or flip-flops.</p><span class="dresscode-tag">Kindly Note</span></div>
+      <div class="dresscode-card">
+        <div class="dresscode-icon">👗</div>
+        <h3>For Women</h3>
+        <p>Midi or maxi dresses, cocktail dresses, or elegant separates. Flats or heels — comfort on the garden grass is welcome.</p>
+        <span class="dresscode-tag">Semi-Formal</span>
+      </div>
+      <div class="dresscode-card">
+        <div class="dresscode-icon">👔</div>
+        <h3>For Men</h3>
+        <p>Barong Tagalog (encouraged!) or coat & tie. Tailored slacks and formal shoes. Jacket optional for reception.</p>
+        <span class="dresscode-tag">Semi-Formal</span>
+      </div>
+      <div class="dresscode-card">
+        <div class="dresscode-icon">🎨</div>
+        <h3>Colour Guide</h3>
+        <p>Pastel purple, baby blue, sage green, lavender, and soft neutrals are warmly welcomed and celebrated.</p>
+        <span class="dresscode-tag">Palette Colors</span>
+      </div>
+      <div class="dresscode-card">
+        <div class="dresscode-icon">🚫</div>
+        <h3>Please Avoid</h3>
+        <p>White, cream, or ivory (reserved for the bride). Overly casual attire such as jeans, flip-flops, or athletic wear.</p>
+        <span class="dresscode-tag">Kindly Note</span>
+      </div>
     </div>
   </div>
 </section>
@@ -460,62 +1190,66 @@
     <div class="section-eyebrow">Before the Big Day</div>
     <h2 class="section-title">Prenup <em>Gallery</em></h2>
     <p class="section-subtitle">A glimpse of our love story — captured at the golden hour.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="gallery-grid">
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#128247;</span><span>Featured Photo</span></div></div>
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#127749;</span><span>Sunset</span></div></div>
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#127807;</span><span>Garden</span></div></div>
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#127754;</span><span>Beach</span></div></div>
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#127800;</span><span>Florals</span></div></div>
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#128335;</span><span>Candlelit</span></div></div>
-      <div class="gallery-item"><div class="gallery-placeholder"><span>&#128131;</span><span>Dance</span></div></div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder"><span>📷</span><span>Featured Photo</span></div>
+      </div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>🌅</span><span>Sunset</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>🌿</span><span>Garden</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>🌊</span><span>Beach</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>🌸</span><span>Florals</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>🕯️</span><span>Candlelit</span></div></div>
+      <div class="gallery-item"><div class="gallery-placeholder"><span>💃</span><span>Dance</span></div></div>
     </div>
-    <p class="gallery-upload-note">&#10022; Replace placeholder boxes with your actual prenup photos. Recommended: 800x800px or 1200x800px for featured.</p>
+    <p class="gallery-upload-note">✦ Replace placeholder boxes with your actual prenup photos. Recommended size: 800×800px or 1200×800px for the featured image.</p>
   </div>
 </section>
 
-<!-- VIDEO -->
+<!-- SAVE THE DATE VIDEO -->
 <section id="video" class="alt-bg">
   <div class="section-inner">
     <div class="section-eyebrow">Our Story in Motion</div>
     <h2 class="section-title">Save the <em>Date</em> Video</h2>
     <p class="section-subtitle">Watch our prenup film — a love story told through light, laughter, and golden moments.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="video-wrap" id="video-thumbnail" onclick="showYouTubeVideo()">
-      <div class="video-bg-text">Joevan &amp; Christine</div>
-      <div class="video-play">&#9654;</div>
-      <div class="video-label">&#9654; Play Save The Date Film</div>
+      <div class="video-bg-text">Joevan & Christine</div>
+      <div class="video-play">▶</div>
+      <div class="video-label">▶ Play Save The Date Film</div>
     </div>
-    <div class="youtube-embed-wrap" id="youtube-embed"><iframe src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Save The Date Video"></iframe></div>
-    <p class="video-note">&#10022; Replace YOUTUBE_VIDEO_ID in the config below with your actual video ID.</p>
+    <div class="youtube-embed-wrap" id="youtube-embed">
+      <iframe src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen title="Save The Date Video"></iframe>
+    </div>
+    <p class="video-note">✦ Replace the YouTube video ID in the script config with your actual Save the Date video link.</p>
   </div>
 </section>
 
 <!-- HASHTAG -->
 <section id="hashtag">
   <div class="section-inner">
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="hashtag-center">
       <div class="hashtag-label">Our Wedding Hashtag</div>
-      <span class="hashtag-text">#ForeverJoevanAndChristine</span>
-      <p class="hashtag-sub">Tag your photos and videos so we can relive every magical moment through your eyes.</p>
-      <button class="hashtag-copy-btn" onclick="copyHashtag()">&#128203; Copy Hashtag</button>
+      <span class="hashtag-text" id="hashtag-display">#ForeverJoevanAndChristine</span>
+      <p class="hashtag-sub">Tag your photos and videos with our hashtag so we can relive every magical moment through your eyes.</p>
+      <button class="hashtag-copy-btn" onclick="copyHashtag()">📋 Copy Hashtag</button>
     </div>
   </div>
 </section>
 
-<!-- MUSIC (visual playlist) -->
+<!-- MUSIC -->
 <section id="music" class="alt-bg">
   <div class="section-inner">
     <div class="section-eyebrow">The Soundtrack</div>
     <h2 class="section-title">Our Wedding <em>Playlist</em></h2>
-    <p class="section-subtitle">Songs that tell our story — for dancing, for happy tears, and for swaying under the stars.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <p class="section-subtitle">Songs that tell our story. Songs for dancing, for crying happy tears, and for swaying under the stars.</p>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="music-player">
-      <div class="music-cover">&#127925;</div>
+      <div class="music-cover">🎵</div>
       <div class="music-info">
         <div class="music-title" id="player-title">Perfect</div>
-        <div class="music-artist" id="player-artist">Ed Sheeran &middot; Ceremony Walk</div>
+        <div class="music-artist" id="player-artist">Ed Sheeran · Ceremony Walk</div>
         <div class="music-progress">
           <span class="music-time" id="player-time">0:00</span>
           <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
@@ -523,16 +1257,16 @@
         </div>
       </div>
       <div class="music-controls">
-        <button class="music-btn" onclick="prevTrack()">&#9198;</button>
-        <button class="music-btn play-btn" id="play-btn" onclick="togglePlay()">&#9654;</button>
-        <button class="music-btn" onclick="nextTrack()">&#9197;</button>
+        <button class="music-btn" onclick="prevTrack()">⏮</button>
+        <button class="music-btn play-btn" id="play-btn" onclick="togglePlay()">▶</button>
+        <button class="music-btn" onclick="nextTrack()">⏭</button>
       </div>
     </div>
     <div class="playlist">
-      <div class="playlist-title">&#127925; Wedding Playlist &mdash; 12 Songs</div>
+      <div class="playlist-title">🎵 Wedding Playlist — 12 Songs</div>
       <div id="playlist-items"></div>
     </div>
-    <p style="font-size:0.78rem;color:var(--text-muted);margin-top:1rem;font-style:italic;">&#10022; The floating player (bottom-right) plays your actual MP3 background music. This playlist is a visual showcase of your wedding songs.</p>
+    <p style="font-size:0.78rem;color:var(--text-muted);margin-top:1rem;font-style:italic;">✦ This player is a visual showcase. Connect a Spotify embed or audio file to enable actual playback.</p>
   </div>
 </section>
 
@@ -542,7 +1276,7 @@
     <div class="section-eyebrow">Good to Know</div>
     <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
     <p class="section-subtitle">We've answered the most common questions to help you prepare for our big day.</p>
-    <div class="floral-divider"><span>&#10048;</span></div>
+    <div class="floral-divider"><span>❀</span></div>
     <div class="faq-list" id="faq-list"></div>
   </div>
 </section>
@@ -558,30 +1292,82 @@
         <div class="form-group">
           <label>Attending?</label>
           <div class="rsvp-choices">
-            <button class="rsvp-choice-btn attending selected" onclick="setAttending(true,this)" id="btn-yes"><span>&#129346;</span> Joyfully Accepts</button>
-            <button class="rsvp-choice-btn not-attending" onclick="setAttending(false,this)" id="btn-no"><span>&#128140;</span> Regretfully Declines</button>
+            <button class="rsvp-choice-btn attending selected" onclick="setAttending(true, this)" id="btn-yes">
+              <span>🥂</span> Joyfully Accepts
+            </button>
+            <button class="rsvp-choice-btn not-attending" onclick="setAttending(false, this)" id="btn-no">
+              <span>💌</span> Regretfully Declines
+            </button>
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group" style="margin-bottom:0;"><label>First Name *</label><input type="text" id="fname" placeholder="Juan" required></div>
-          <div class="form-group" style="margin-bottom:0;"><label>Last Name *</label><input type="text" id="lname" placeholder="Dela Cruz" required></div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>First Name *</label>
+            <input type="text" id="fname" placeholder="Juan" required>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Last Name *</label>
+            <input type="text" id="lname" placeholder="Dela Cruz" required>
+          </div>
         </div>
-        <div class="form-group"><label>Email Address *</label><input type="email" id="email" placeholder="your@email.com" required></div>
-        <div class="form-group"><label>Mobile Number</label><input type="tel" id="phone" placeholder="+63 917 000 0000"></div>
-        <div class="form-group" id="guests-group"><label>Number of Guests (incl. yourself)</label><select id="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></div>
-        <div class="form-group" id="meal-group"><label>Meal Preference</label><select id="meal"><option value="standard">Standard (Meat &amp; Fish)</option><option value="vegetarian">Vegetarian</option><option value="vegan">Vegan</option><option value="halal">Halal</option></select></div>
-        <div class="form-group"><label>Dietary Restrictions / Allergies</label><input type="text" id="dietary" placeholder="e.g. gluten-free, nut allergy"></div>
-        <div class="form-group"><label>Song Request &#127925;</label><input type="text" id="song" placeholder="Request a song for the dance floor!"></div>
-        <div class="form-group"><label>Message for the Couple &#128140;</label><textarea id="message" placeholder="Share your well-wishes, a memory, or a prayer for Joevan &amp; Christine..."></textarea></div>
-        <div class="form-group"><label>&#128231; Email Reminder</label><select id="reminder"><option value="both">1 week before + day before (recommended)</option><option value="week">1 week before only</option><option value="day">Day before only</option><option value="none">No reminders</option></select></div>
-        <div class="email-reminder-section"><h4>&#9993;&#65039; Email Reminders</h4><p>We'll send gentle reminders to your email before the big day — including final details, schedule updates, and directions to the venues.</p></div>
-        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">Send My RSVP &#10022;</button>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" id="phone" placeholder="+63 917 000 0000">
+        </div>
+        <div class="form-group" id="guests-group">
+          <label>Number of Guests (incl. yourself)</label>
+          <select id="guests">
+            <option value="1">1 guest</option>
+            <option value="2" selected>2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+          </select>
+        </div>
+        <div class="form-group" id="meal-group">
+          <label>Meal Preference</label>
+          <select id="meal">
+            <option value="standard">Standard (Meat & Fish)</option>
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="halal">Halal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Dietary Restrictions / Allergies</label>
+          <input type="text" id="dietary" placeholder="e.g. gluten-free, nut allergy">
+        </div>
+        <div class="form-group">
+          <label>Song Request 🎵</label>
+          <input type="text" id="song" placeholder="Request a song for the dance floor!">
+        </div>
+        <div class="form-group">
+          <label>Message for the Couple 💌</label>
+          <textarea id="message" placeholder="Share your well-wishes, a memory, or a prayer for Joevan & Christine..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>📧 Email Reminder</label>
+          <select id="reminder">
+            <option value="both">1 week before + day before (recommended)</option>
+            <option value="week">1 week before only</option>
+            <option value="day">Day before only</option>
+            <option value="none">No reminders</option>
+          </select>
+        </div>
+        <div class="email-reminder-section">
+          <h4>✉️ Email Reminders</h4>
+          <p>We'll send gentle reminders to your email before the big day — including final details, schedule updates, and directions to the venues. You can opt out anytime.</p>
+        </div>
+        <button class="submit-btn" id="submit-btn" onclick="submitRSVP()">Send My RSVP ✦</button>
         <p class="rsvp-note">By submitting, your response will be recorded in our guest management system.<br>For changes or queries, contact us at <strong>j.cponce.me92@gmail.com</strong></p>
       </div>
       <div class="form-success" id="form-success">
-        <div class="success-icon" id="success-icon">&#129346;</div>
+        <div class="success-icon" id="success-icon">🥂</div>
         <h3 id="success-title">See you at the altar!</h3>
-        <p id="success-message">Thank you for your RSVP. We've received your response and can't wait to celebrate with you.</p>
+        <p id="success-message">Thank you for your RSVP. We've received your response and can't wait to celebrate with you on our special day.</p>
       </div>
     </div>
   </div>
@@ -589,255 +1375,226 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-names">Joevan &amp; Christine</div>
-  <div class="footer-date">November 21, 2026 &middot; Bacolod City</div>
-  <p class="footer-text">"I have found the one whom my soul loves." &mdash; Song of Solomon 3:4<br><br>#ForeverJoevanAndChristine</p>
+  <div class="footer-names">Joevan & Christine</div>
+  <div class="footer-date">November 21, 2026 · Bacolod City</div>
+  <p class="footer-text">
+    "I have found the one whom my soul loves." — Song of Solomon 3:4<br><br>
+    #ForeverJoevanAndChristine
+  </p>
 </footer>
 
 <script>
-// ════════════════════════════════════════
-// ⚙️  CONFIG — only change values here
-// ════════════════════════════════════════
-const WEDDING_DATE     = new Date('2026-11-21T14:00:00+08:00');
+const WEDDING_DATE    = new Date('2026-11-21T14:00:00+08:00');
 const YOUTUBE_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID';
 const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycby0S0YSExPJKjSisA-I7A5NMtjuk47QDgl_j95VeYInQ5DBuVp0eByN3ffTGl3PN7F5/exec';
-const HASHTAG          = '#ForeverJoevanAndChristine';
-const MP3_FILE         = 'wedding-song.mp3'; // 🎵 change to your filename
+const HASHTAG         = '#ForeverJoevanAndChristine';
 
-// ════════════════════════════════════════
-// 🎵 FLOATING MP3 PLAYER
-// ════════════════════════════════════════
-const audio       = document.getElementById('weddingAudio');
-const fpPlayBtn   = document.getElementById('fpPlayBtn');
-const fpMuteBtn   = document.getElementById('fpMuteBtn');
-const fpVolSlider = document.getElementById('fpVolSlider');
-const fpStatus    = document.getElementById('fpStatus');
-const fpTitle     = document.getElementById('fpTitle');
-const fpPlayer    = document.getElementById('floatingPlayer');
-const fpHint      = document.getElementById('fpHint');
-let   fpPlaying   = false;
-let   fpMuted     = false;
-
-// Set MP3 source from config
-audio.querySelector('source').src = MP3_FILE;
-audio.load();
-audio.volume = 0.4;
-
-// Hint bubble — shows after 2.5s
-setTimeout(() => {
-  fpHint.classList.add('show');
-  setTimeout(() => fpHint.classList.remove('show'), 4000);
-}, 2500);
-
-// Show clean song name
-audio.addEventListener('loadedmetadata', () => {
-  const name = MP3_FILE.replace(/\.mp3$/i,'').replace(/[-_]/g,' ');
-  fpTitle.textContent = name || 'Our Song';
-});
-audio.addEventListener('error', () => {
-  fpStatus.textContent = 'File not found';
-  fpTitle.textContent  = MP3_FILE + ' missing';
-});
-
-function fpTogglePlay() {
-  if (fpPlaying) {
-    audio.pause();
-    fpPlayBtn.innerHTML = '&#9654;';
-    fpStatus.textContent = 'Paused';
-    fpPlayer.classList.remove('playing');
-    fpPlaying = false;
-  } else {
-    audio.volume = 0;
-    audio.play().then(() => {
-      fpFadeIn();
-      fpPlayBtn.innerHTML = '&#9646;&#9646;';
-      fpStatus.textContent = 'Now playing \u266a';
-      fpPlayer.classList.add('playing');
-      fpPlaying = true;
-    }).catch(() => {
-      fpStatus.textContent = 'Tap play to start';
-    });
-  }
-}
-
-function fpFadeIn() {
-  const target = parseFloat(fpVolSlider.value);
-  let v = 0;
-  const timer = setInterval(() => {
-    v = Math.min(v + 0.04, target);
-    audio.volume = fpMuted ? 0 : v;
-    if (v >= target) clearInterval(timer);
-  }, 80);
-}
-
-function fpToggleMute() {
-  fpMuted = !fpMuted;
-  audio.muted = fpMuted;
-  fpMuteBtn.innerHTML = fpMuted ? '&#128263;' : '&#128266;';
-}
-
-function fpSetVolume(val) {
-  audio.volume = parseFloat(val);
-  if (fpMuted && parseFloat(val) > 0) {
-    fpMuted = false; audio.muted = false;
-    fpMuteBtn.innerHTML = '&#128266;';
-  }
-}
-
-function dismissPlayer() {
-  fpPlayer.classList.add('hidden');
-  if (fpPlaying) { audio.pause(); fpPlaying = false; }
-}
-
-// ════════════════════════════════════════
-// ⏱ COUNTDOWN
-// ════════════════════════════════════════
 function updateCountdown() {
-  const diff = WEDDING_DATE - new Date();
+  const now = new Date();
+  const diff = WEDDING_DATE - now;
   if (diff <= 0) {
-    document.getElementById('countdown').innerHTML = '<div style="font-family:\'Cormorant Garant\',serif;font-size:2rem;color:var(--rose-deep);text-align:center;">Today is the day! \uD83E\uDD42</div>';
+    document.getElementById('countdown').innerHTML = '<div style="font-family:\'Cormorant Garant\',serif;font-size:2rem;color:var(--rose-deep);text-align:center;">Today is the day! 🥂</div>';
     return;
   }
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  document.getElementById('cd-days').textContent  = String(d).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-mins').textContent  = String(m).padStart(2, '0');
+  document.getElementById('cd-secs').textContent  = String(s).padStart(2, '0');
 }
-updateCountdown(); setInterval(updateCountdown, 1000);
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
-// ════════════════════════════════════════
-// 🌸 FALLING PETALS
-// ════════════════════════════════════════
 const canvas = document.getElementById('petals-canvas');
 const ctx = canvas.getContext('2d');
 let petals = [];
 function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-resizeCanvas(); window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 function createPetal() {
-  return { x: Math.random()*canvas.width, y:-20, size: Math.random()*10+5, speedY: Math.random()*1.5+0.5, speedX: (Math.random()-0.5)*0.8, rotation: Math.random()*360, rotSpeed: (Math.random()-0.5)*3, opacity: Math.random()*0.4+0.2, color: ['#C5A8E0','#E8D5F5','#A8C5E8','#A8C5A8','#D8E8F8'][Math.floor(Math.random()*5)] };
+  return {
+    x: Math.random() * canvas.width, y: -20,
+    size: Math.random() * 10 + 5,
+    speedY: Math.random() * 1.5 + 0.5,
+    speedX: (Math.random() - 0.5) * 0.8,
+    rotation: Math.random() * 360,
+    rotSpeed: (Math.random() - 0.5) * 3,
+    opacity: Math.random() * 0.4 + 0.2,
+    color: ['#C5A8E0','#E8D5F5','#A8C5E8','#A8C5A8','#D8E8F8'][Math.floor(Math.random() * 5)]
+  };
 }
-function drawPetal(p) { ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rotation*Math.PI/180); ctx.globalAlpha=p.opacity; ctx.fillStyle=p.color; ctx.beginPath(); ctx.ellipse(0,0,p.size/2,p.size,0,0,Math.PI*2); ctx.fill(); ctx.restore(); }
-function animatePetals() { ctx.clearRect(0,0,canvas.width,canvas.height); if(petals.length<30) petals.push(createPetal()); petals=petals.filter(p=>p.y<canvas.height+30); petals.forEach(p=>{p.y+=p.speedY;p.x+=p.speedX;p.rotation+=p.rotSpeed;drawPetal(p);}); requestAnimationFrame(animatePetals); }
+function drawPetal(p) {
+  ctx.save();
+  ctx.translate(p.x, p.y);
+  ctx.rotate(p.rotation * Math.PI / 180);
+  ctx.globalAlpha = p.opacity;
+  ctx.fillStyle = p.color;
+  ctx.beginPath();
+  ctx.ellipse(0, 0, p.size / 2, p.size, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+function animatePetals() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  if (petals.length < 30) petals.push(createPetal());
+  petals = petals.filter(p => p.y < canvas.height + 30);
+  petals.forEach(p => { p.y += p.speedY; p.x += p.speedX; p.rotation += p.rotSpeed; drawPetal(p); });
+  requestAnimationFrame(animatePetals);
+}
 animatePetals();
 
-// ════════════════════════════════════════
-// ❓ FAQ
-// ════════════════════════════════════════
 const faqs = [
-  {q:"When is the RSVP deadline?",a:"Please submit your RSVP by October 15, 2026. This allows us to finalize seating, catering, and all event preparations."},
-  {q:"What time should I arrive?",a:"The ceremony begins at 2:00 PM. We recommend arriving by 1:30 PM so you can be comfortably seated before the processional begins."},
-  {q:"Is parking available at the venues?",a:"Yes! Free parking is available at the church grounds and at Nature's Village Resort. Valet service will also be available at the reception venue. Shuttle service departs from Bacolod City Hall at 2:00 PM and 5:00 PM."},
-  {q:"Are children welcome?",a:"We love your little ones! Children are welcome at the ceremony. For the reception, we have arranged a kids' corner with activities. Please include children in your guest count when RSVPing."},
-  {q:"Can I take photos during the ceremony?",a:"We kindly ask that you observe an unplugged ceremony — please put away cameras and phones during the ceremony. Our photographer will capture everything beautifully. Feel free to snap away during the reception!"},
-  {q:"Will there be dietary options?",a:"Absolutely. Please indicate your dietary preferences (vegetarian, vegan, halal, or allergies) in your RSVP and we will ensure you're taken care of."},
-  {q:"What is the dress code?",a:"Semi-formal / Cocktail attire. We encourage our palette colors — pastel purple, baby blue, sage green, lavender, and soft neutrals. Please avoid white or cream (reserved for the bride). Barong Tagalog is warmly encouraged for men."},
-  {q:"Can I bring a plus-one?",a:"Our guest list is intimate and carefully planned. Plus-ones are by invitation only. Please reach out to us directly if you have questions."},
-  {q:"Where can I send a gift?",a:"Your presence is the greatest gift. If you wish to give more, cash gifts and our honeymoon fund are greatly appreciated."},
-  {q:"Will there be a live band or DJ?",a:"Both! A live acoustic band will serenade during dinner, and our DJ will take over for dancing from 10:00 PM onwards at Rombuhan Restobar."}
+  { q: "When is the RSVP deadline?", a: "Please submit your RSVP by October 15, 2026. This allows us to finalize seating, catering, and all event preparations." },
+  { q: "What time should I arrive?", a: "The ceremony begins at 2:00 PM. We recommend arriving by 1:30 PM so you can be comfortably seated before the processional begins." },
+  { q: "Is parking available at the venues?", a: "Yes! Free parking is available at the church grounds and at Nature's Village Resort. Valet service will also be available at the reception venue. Shuttle service departs from Bacolod City Hall at 2:00 PM and 5:00 PM." },
+  { q: "Are children welcome?", a: "We love your little ones! Children are welcome at the ceremony. For the reception, we have arranged a kids' corner with activities. Please include children in your guest count when RSVPing." },
+  { q: "Can I take photos during the ceremony?", a: "We kindly ask that you observe an unplugged ceremony — please put away cameras and phones during the ceremony so everyone can be fully present. Our photographer will capture everything beautifully. Feel free to snap as many photos as you like during the reception!" },
+  { q: "Will there be a vegetarian or dietary option?", a: "Absolutely. Please indicate your dietary preferences (vegetarian, vegan, halal, or allergies) in your RSVP and we will ensure you're taken care of." },
+  { q: "What is the dress code?", a: "Semi-formal / Cocktail attire. We encourage our palette colors — pastel purple, baby blue, sage green, lavender, and soft neutrals. Please avoid white or cream (reserved for the bride). Barong Tagalog is warmly encouraged for men." },
+  { q: "Can I bring a plus-one?", a: "Our guest list is intimate and carefully planned. Plus-ones are by invitation only. If your invitation includes a plus-one, it will be stated. Please reach out to us directly if you have questions." },
+  { q: "Where can I send a gift?", a: "Your presence is the greatest gift. If you wish to give more, cash gifts and our honeymoon fund are greatly appreciated." },
+  { q: "Will there be a live band or DJ?", a: "Both! A live acoustic band will serenade during dinner, and our DJ will take over for dancing from 10:00 PM onwards at Rombuhan Restobar." }
 ];
 const faqList = document.getElementById('faq-list');
-faqs.forEach((item,i) => {
-  const el = document.createElement('div'); el.className='faq-item';
+faqs.forEach((item, i) => {
+  const el = document.createElement('div');
+  el.className = 'faq-item';
   el.innerHTML = `<div class="faq-q" onclick="toggleFaq(${i})"><span>${item.q}</span><span class="faq-icon">+</span></div><div class="faq-a">${item.a}</div>`;
   faqList.appendChild(el);
 });
-function toggleFaq(i) { document.querySelectorAll('.faq-item')[i].classList.toggle('open'); }
+function toggleFaq(i) {
+  document.querySelectorAll('.faq-item')[i].classList.toggle('open');
+}
 
-// ════════════════════════════════════════
-// 🎵 VISUAL PLAYLIST (showcase only)
-// ════════════════════════════════════════
 const songs = [
-  {title:'Perfect',artist:'Ed Sheeran',context:'Ceremony Walk',duration:'4:23'},
-  {title:'A Thousand Years',artist:'Christina Perri',context:'Bridal March',duration:'4:45'},
-  {title:"Can't Help Falling in Love",artist:'Elvis Presley',context:'First Dance',duration:'3:01'},
-  {title:'Ikaw',artist:'Yeng Constantino',context:'Vows Exchange',duration:'4:10'},
-  {title:'Kahit Ayaw Mo Na',artist:'This Band',context:'Dinner',duration:'3:58'},
-  {title:'Thinking Out Loud',artist:'Ed Sheeran',context:'Dinner',duration:'4:41'},
-  {title:'All of Me',artist:'John Legend',context:'Dinner',duration:'4:29'},
-  {title:'Sa Susunod Na Habang Buhay',artist:'Ben&Ben',context:'Reception',duration:'4:12'},
-  {title:'Uptown Funk',artist:'Bruno Mars',context:'Dancing',duration:'4:30'},
-  {title:'Shape of You',artist:'Ed Sheeran',context:'Dancing',duration:'3:54'},
-  {title:'Marry You',artist:'Bruno Mars',context:'Dancing',duration:'3:50'},
-  {title:'Photograph',artist:'Ed Sheeran',context:'Last Song',duration:'4:19'}
+  { title: 'Perfect', artist: 'Ed Sheeran', context: 'Ceremony Walk', duration: '4:23' },
+  { title: 'A Thousand Years', artist: 'Christina Perri', context: 'Bridal March', duration: '4:45' },
+  { title: "Can't Help Falling in Love", artist: 'Elvis Presley', context: 'First Dance', duration: '3:01' },
+  { title: 'Ikaw', artist: 'Yeng Constantino', context: 'Vows Exchange', duration: '4:10' },
+  { title: 'Kahit Ayaw Mo Na', artist: 'This Band', context: 'Dinner', duration: '3:58' },
+  { title: 'Thinking Out Loud', artist: 'Ed Sheeran', context: 'Dinner', duration: '4:41' },
+  { title: 'All of Me', artist: 'John Legend', context: 'Dinner', duration: '4:29' },
+  { title: 'Sa Susunod Na Habang Buhay', artist: 'Ben&Ben', context: 'Reception', duration: '4:12' },
+  { title: 'Uptown Funk', artist: 'Bruno Mars', context: 'Dancing', duration: '4:30' },
+  { title: 'Shape of You', artist: 'Ed Sheeran', context: 'Dancing', duration: '3:54' },
+  { title: 'Marry You', artist: 'Bruno Mars', context: 'Dancing', duration: '3:50' },
+  { title: 'Photograph', artist: 'Ed Sheeran', context: 'Last Song', duration: '4:19' }
 ];
-let currentTrack=0, isPlaying=false;
+let currentTrack = 0;
+let isPlaying = false;
 const playlistEl = document.getElementById('playlist-items');
-songs.forEach((song,i) => {
-  const el = document.createElement('div'); el.className=`playlist-item${i===0?' active':''}`; el.id=`track-${i}`; el.onclick=()=>selectTrack(i);
-  el.innerHTML=`<span class="playlist-num">${i===0?'&#9834;':i+1}</span><div class="playlist-song"><div class="playlist-song-title">${song.title}</div><div class="playlist-song-artist">${song.artist} &middot; ${song.context}</div></div><span class="playlist-duration">${song.duration}</span>`;
+songs.forEach((song, i) => {
+  const el = document.createElement('div');
+  el.className = `playlist-item${i === 0 ? ' active' : ''}`;
+  el.id = `track-${i}`;
+  el.onclick = () => selectTrack(i);
+  el.innerHTML = `<span class="playlist-num">${i === 0 ? '♪' : i + 1}</span><div class="playlist-song"><div class="playlist-song-title">${song.title}</div><div class="playlist-song-artist">${song.artist} · ${song.context}</div></div><span class="playlist-duration">${song.duration}</span>`;
   playlistEl.appendChild(el);
 });
 function selectTrack(i) {
-  document.querySelectorAll('.playlist-item').forEach((el,j)=>{el.classList.toggle('active',j===i);el.querySelector('.playlist-num').innerHTML=j===i?'&#9834;':j+1;});
-  currentTrack=i;
-  document.getElementById('player-title').textContent=songs[i].title;
-  document.getElementById('player-artist').textContent=songs[i].artist+' \u00b7 '+songs[i].context;
-  document.getElementById('player-duration').textContent=songs[i].duration;
-  document.getElementById('progress-fill').style.width='0%';
-  document.getElementById('player-time').textContent='0:00';
+  document.querySelectorAll('.playlist-item').forEach((el, j) => {
+    el.classList.toggle('active', j === i);
+    el.querySelector('.playlist-num').textContent = j === i ? '♪' : j + 1;
+  });
+  currentTrack = i;
+  document.getElementById('player-title').textContent = songs[i].title;
+  document.getElementById('player-artist').textContent = songs[i].artist + ' · ' + songs[i].context;
+  document.getElementById('player-duration').textContent = songs[i].duration;
+  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('player-time').textContent = '0:00';
 }
-function togglePlay(){isPlaying=!isPlaying;document.getElementById('play-btn').innerHTML=isPlaying?'&#9646;&#9646;':'&#9654;';}
-function prevTrack(){selectTrack((currentTrack-1+songs.length)%songs.length);}
-function nextTrack(){selectTrack((currentTrack+1)%songs.length);}
+function togglePlay() { isPlaying = !isPlaying; document.getElementById('play-btn').textContent = isPlaying ? '⏸' : '▶'; }
+function prevTrack() { selectTrack((currentTrack - 1 + songs.length) % songs.length); }
+function nextTrack() { selectTrack((currentTrack + 1) % songs.length); }
 
-// ════════════════════════════════════════
-// ▶ YOUTUBE VIDEO
-// ════════════════════════════════════════
 function showYouTubeVideo() {
-  if (YOUTUBE_VIDEO_ID==='YOUR_YOUTUBE_VIDEO_ID'){alert('Please update YOUTUBE_VIDEO_ID in the config.');return;}
-  document.getElementById('video-thumbnail').style.display='none';
-  const embed=document.getElementById('youtube-embed');
-  embed.querySelector('iframe').src=`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`;
-  embed.style.display='block';
+  if (YOUTUBE_VIDEO_ID === 'YOUR_YOUTUBE_VIDEO_ID') { alert('Please update YOUTUBE_VIDEO_ID in the script config.'); return; }
+  const thumb = document.getElementById('video-thumbnail');
+  const embed = document.getElementById('youtube-embed');
+  embed.querySelector('iframe').src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1`;
+  thumb.style.display = 'none';
+  embed.style.display = 'block';
 }
 
-// ════════════════════════════════════════
-// # HASHTAG
-// ════════════════════════════════════════
-function copyHashtag(){
-  navigator.clipboard.writeText(HASHTAG).then(()=>{
-    const btn=document.querySelector('.hashtag-copy-btn');
-    btn.textContent='\u2713 Copied!';
-    setTimeout(()=>btn.innerHTML='&#128203; Copy Hashtag',2000);
+function copyHashtag() {
+  navigator.clipboard.writeText(HASHTAG).then(() => {
+    const btn = document.querySelector('.hashtag-copy-btn');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy Hashtag', 2000);
   });
 }
 
-// ════════════════════════════════════════
-// 📋 RSVP
-// ════════════════════════════════════════
-let attending=true;
-function setAttending(val,btn){
-  attending=val;
+let attending = true;
+function setAttending(val, btn) {
+  attending = val;
   document.getElementById('btn-yes').classList.remove('selected');
   document.getElementById('btn-no').classList.remove('selected');
   btn.classList.add('selected');
-  document.getElementById('guests-group').style.display=val?'':'none';
-  document.getElementById('meal-group').style.display=val?'':'none';
-}
-async function submitRSVP(){
-  const fname=document.getElementById('fname').value.trim();
-  const lname=document.getElementById('lname').value.trim();
-  const email=document.getElementById('email').value.trim();
-  if(!fname||!lname||!email){alert('Please fill in your name and email address.');return;}
-  const btn=document.getElementById('submit-btn');
-  btn.disabled=true; btn.textContent='Sending...';
-  const data={timestamp:new Date().toISOString(),firstName:fname,lastName:lname,email,phone:document.getElementById('phone').value,attending:attending?'Yes':'No',guests:attending?document.getElementById('guests').value:'0',meal:attending?document.getElementById('meal').value:'N/A',dietary:document.getElementById('dietary').value,songRequest:document.getElementById('song').value,message:document.getElementById('message').value,reminder:document.getElementById('reminder').value};
-  try{await fetch(GOOGLE_SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});}catch(e){console.warn('Submit:',e);}
-  document.getElementById('rsvp-form-content').style.display='none';
-  const success=document.getElementById('form-success'); success.style.display='block';
-  if(attending){document.getElementById('success-icon').textContent='\uD83E\uDD42';document.getElementById('success-title').textContent="We'll see you there!";document.getElementById('success-message').textContent=`Thank you, ${fname}! We're so excited to celebrate with you on November 21, 2026. A confirmation will be sent to ${email}.`;}
-  else{document.getElementById('success-icon').textContent='\uD83D\uDC8C';document.getElementById('success-title').textContent="We'll miss you.";document.getElementById('success-message').textContent=`Thank you for letting us know, ${fname}. We'll miss having you with us and hope to celebrate with you another time.`;}
+  const guestGroup = document.getElementById('guests-group');
+  const mealGroup  = document.getElementById('meal-group');
+  guestGroup.style.display = val ? '' : 'none';
+  mealGroup.style.display  = val ? '' : 'none';
 }
 
-// ════════════════════════════════════════
-// ☰ MOBILE NAV
-// ════════════════════════════════════════
-function toggleMobileNav(){document.getElementById('mobile-nav').classList.toggle('open');}
-function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');}
+async function submitRSVP() {
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!fname || !lname || !email) {
+    alert('Please fill in your name and email address.');
+    return;
+  }
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  const data = {
+    timestamp:   new Date().toISOString(),
+    firstName:   fname,
+    lastName:    lname,
+    email:       email,
+    phone:       document.getElementById('phone').value,
+    attending:   attending ? 'Yes' : 'No',
+    guests:      attending ? document.getElementById('guests').value : '0',
+    meal:        attending ? document.getElementById('meal').value : 'N/A',
+    dietary:     document.getElementById('dietary').value,
+    songRequest: document.getElementById('song').value,
+    message:     document.getElementById('message').value,
+    reminder:    document.getElementById('reminder').value
+  };
+
+  try {
+    if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL') {
+      await fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    }
+  } catch (e) {
+    console.warn('Submission note:', e);
+  }
+
+  document.getElementById('rsvp-form-content').style.display = 'none';
+  const success = document.getElementById('form-success');
+  success.style.display = 'block';
+  if (attending) {
+    document.getElementById('success-icon').textContent = '🥂';
+    document.getElementById('success-title').textContent = "We'll see you there!";
+    document.getElementById('success-message').textContent = `Thank you, ${fname}! We're so excited to celebrate with you on November 21, 2026. A confirmation email will be sent to ${email}. We'll also remind you before the big day!`;
+  } else {
+    document.getElementById('success-icon').textContent = '💌';
+    document.getElementById('success-title').textContent = "We'll miss you.";
+    document.getElementById('success-message').textContent = `Thank you for letting us know, ${fname}. We'll miss having you with us. We hope to celebrate with you another time, and we'll keep you in our hearts on our special day.`;
+  }
+}
+
+function toggleMobileNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
+function closeMobileNav()  { document.getElementById('mobile-nav').classList.remove('open'); }
 </script>
 </body>
 </html>
